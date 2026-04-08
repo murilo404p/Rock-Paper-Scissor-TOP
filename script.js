@@ -6,6 +6,15 @@ function getComputerChoice() {
     return choice;
 }
 
-function getHumanChoice() {
-    
-}
+
+//Para quando a pessoa clicar na jogada
+let play;
+window.addEventListener('click', (e) => {
+   if (e.target.id === "rock" || e.target.id === "paper" || e.target.id === "scissors" ) {
+    play = e.target.id;
+    console.log(play);
+   } 
+});
+
+let humanScore = 0;
+let computerScore = 0;

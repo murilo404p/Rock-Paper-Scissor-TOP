@@ -74,6 +74,14 @@ header p {
     color: #fff;
 }
 
+.paragraph {
+    font-family: 'Press Start 2P', cursive;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #X {
     display: flex;
     align-items: center;
@@ -85,12 +93,20 @@ header p {
 
 #human, #computer {
   font-size: 3rem;
+  margin-bottom: 10px;
 }
 
 .container-plays {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.sign {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .sign .moves{
@@ -100,10 +116,12 @@ header p {
     padding: 30px;
     border-radius: 10px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .sign .moves:hover {
     background-color: rgb(90, 90, 90);
+    transform: scale(1.1);
 
 }
 
