@@ -15,16 +15,16 @@
 
     <section class="container">
       <div class="content">  
-        <p class="paragraph">First to score 5 points wins the game!</p>
+        <p class="paragraph" id="paragraph">First to score 5 points wins the game!</p>
         <div class="container-points">
           <div class="pointsHuman">
             <div id="human">🧑</div>
-            <p>Points: 0</p>
+            <p id="scoreHumUI">Points: 0</p>
           </div>
           <p id="X">X</p>
           <div class="pointsComputer">
             <div id="computer">🖥️</div>
-            <p>Points: 0</p>
+            <p id="scoreCompUI">Points: 0</p>
           </div>
         </div>
   
@@ -37,7 +37,7 @@
             <div class="moves" id="paper">🤚</div>
             <p id="text">PAPER</p>
           </button>
-          <button class="sign" >
+          <button class="sign">
             <div class="moves" id="scissors">✌️</div>
             <P id="text">SCISSOR</P>
           </button>
