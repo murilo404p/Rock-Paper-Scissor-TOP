@@ -2,6 +2,8 @@ let humanScore = 0;
 let computerScore = 0;
 let gameActive = false;
 let computerChoice;
+let humanSituation;
+let computerSituation;
 
 function getComputerChoice() {
     const options = ["rock", "paper", "scissors"]; // Cada valor dentro do array tem seu index
@@ -32,32 +34,32 @@ function playRound(human, computer) {
     if (human === computer) {
         document.getElementById("paragraph").innerText = "Draw! Play again."
     } else if (human === "rock" && computer === "paper") {
-        computerScore++;
+        computerSituation = true;
         updateScoreUI();
         document.getElementById("paragraph").innerHTML = "The computer chose paper! Point for Computer!"
         gameFlow();
     } else if (human === "rock" && computer === "scissors") {
-        humanScore++;
+        humanSituation = true;
         updateScoreUI();
         document.getElementById("paragraph").innerHTML = "The computer chose scissors! You got a point!"
         gameFlow();
     } else if (human === "paper" && computer === "rock") {
-        humanScore++;
+        humanSituation = true;
         updateScoreUI();
         document.getElementById("paragraph").innerHTML = "The computer chose rock! You got a point!"
         gameFlow();
     } else if (human === "paper" && computer === "scissors") {
-        computerScore++;
+        computerSituation = true;
         updateScoreUI();
         document.getElementById("paragraph").innerHTML = "The computer chose scissors! Point for Computer!"
         gameFlow();
     } else if (human === "scissors" && computer === "rock") {
-        computerScore++;
+        computerSituation = true;
         updateScoreUI();
         document.getElementById("paragraph").innerHTML = "The computer chose rock! Point for Computer!"
         gameFlow();
     } else if (human === "scissors" && computer === "paper") {
-        humanScore++;
+        humanSituation = true;
         updateScoreUI();
         document.getElementById("paragraph").innerHTML = "The computer chose paper! You got a point!"
         gameFlow();
@@ -71,14 +73,20 @@ function gameFlow() {
         gameActive = false;
         humanScore = 0;
         computerScore = 0;
+        document.getElementById("scoreCompUI").innerHTML = "Points: 0" ;
+        document.getElementById("scoreHumUI").innerHTML = "Points: 0";
     }
 }
 
 // Função para atualizar os pontos na tela do usuário
 function updateScoreUI() {
-    if (humanScore++) {
+    if (humanSituation == true) {
+        humanScore++;
         document.getElementById("scoreHumUI").innerHTML = "Points: " + humanScore;
-    } else if (computerScore++) {
+        humanSituation = false;
+    } else if (computerSituation == true) {
+        computerScore++;
         document.getElementById("scoreCompUI").innerHTML = "Points: " + computerScore;
+        computerSituation =  false;
     }
 }
