@@ -135,4 +135,53 @@ header p {
     margin-top: 10px;
 }
 
+.endScreen {
+    background-color: black;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 300px;
+    width: 500px;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    animation: pop-up 0.5s ease-out;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+
+.buttonPlayAgain {
+    font-family: 'Press Start 2P', cursive;
+    background: rgb(54, 54, 54);
+    padding: 20px;
+    color: yellow;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.buttonPlayAgain:hover {
+  transform: scale(1.05);
+}
+
+.endTitle, .endScore {
+    font-family: 'Press Start 2P', cursive;  
+    margin: 5px;
+}
+
+@keyframes pop-up {
+    0% {
+        transform: translate(-50%, -500%) scale(0.5);
+    }   
+    70% {
+        transform: translate(-50%, -40%) scale(1.1);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
 

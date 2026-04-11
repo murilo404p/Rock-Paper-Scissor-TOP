@@ -29,6 +29,10 @@ window.addEventListener('click', (e) => {
     playRound(play, computerChoice);
 });
 
+document.getElementById("playAgain").addEventListener("click", function() {
+    document.getElementById("endScreen").style.display = "none";
+});
+
 
 function playRound(human, computer) {
     if (human === computer) {
@@ -70,11 +74,14 @@ function playRound(human, computer) {
 function gameFlow() {
     if (humanScore === 5 || computerScore === 5) {
         document.getElementById("paragraph").innerText = "Play Again! First to score 5 points wins the game!."
-        gameActive = false;
-        humanScore = 0;
-        computerScore = 0;
         document.getElementById("scoreCompUI").innerHTML = "Points: 0" ;
         document.getElementById("scoreHumUI").innerHTML = "Points: 0";
+
+        // Aparcer na tela quem ganhou ou perdeu
+        showEndScreen();
+
+        //função reset
+        resetGame();
     }
 }
 
@@ -89,4 +96,30 @@ function updateScoreUI() {
         document.getElementById("scoreCompUI").innerHTML = "Points: " + computerScore;
         computerSituation =  false;
     }
+}
+
+function showEndScreen() {
+    if (humanScore === 5) {
+        document.getElementById("endScreen").style.display = "flex";
+        document.getElementById("endTitle").innerHTML = "YOU WIN! GREAT JOB!";
+        document.getElementById("endTitle").style.color = "#00FF00";
+        document.getElementById("endScore").innerHTML = "You: " + humanScore + " X " + "Computer: " + computerScore;
+        document.getElementById("endScore").style.color = "#00FF00";
+
+    } else {
+        document.getElementById("endScreen").style.display = "flex";
+        document.getElementById("endTitle").innerHTML = "YOU LOSE! TRY AGAIN!";
+        document.getElementById("endTitle").style.color = "#FF0000";
+        document.getElementById("endScore").innerHTML = "You: " + humanScore + " X " + "Computer: " + computerScore;
+        document.getElementById("endScore").style.color = "#FF0000";
+        gameActive = false;
+        humanScore = 0;
+        computerScore = 0;
+    }
+}
+
+function resetGame() {
+    gameActive = false;
+    humanScore = 0;
+    computerScore = 0;
 }
