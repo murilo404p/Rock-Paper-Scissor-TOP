@@ -16,17 +16,18 @@ function getComputerChoice() {
 //Para quando a pessoa clicar na jogada
 let play;
 window.addEventListener('click', (e) => {
-   if (e.target.id === "rock" || e.target.id === "paper" || e.target.id === "scissors" ) {
-    play = e.target.id;
-    gameActive = true;
-    console.log(play);
+    if (e.target.id === "rock" || e.target.id === "paper" || e.target.id === "scissors" ) {
+        play = e.target.id;
+        gameActive = true;
+        console.log(play);
     } 
+    
     if (!gameActive) {
         return;
     }
-
     computerChoice = getComputerChoice();
     playRound(play, computerChoice);
+    
 });
 
 document.getElementById("playAgain").addEventListener("click", function() {
@@ -112,9 +113,6 @@ function showEndScreen() {
         document.getElementById("endTitle").style.color = "#FF0000";
         document.getElementById("endScore").innerHTML = "You: " + humanScore + " X " + "Computer: " + computerScore;
         document.getElementById("endScore").style.color = "#FF0000";
-        gameActive = false;
-        humanScore = 0;
-        computerScore = 0;
     }
 }
 
