@@ -1,9 +1,9 @@
 let humanScore = 0;
 let computerScore = 0;
-let gameActive = false;
 let computerChoice;
 let humanSituation;
 let computerSituation;
+const buttons = document.querySelectorAll(".moves");
 
 function getComputerChoice() {
     const options = ["rock", "paper", "scissors"]; // Cada valor dentro do array tem seu index
@@ -15,23 +15,17 @@ function getComputerChoice() {
 
 //Para quando a pessoa clicar na jogada
 let play;
-window.addEventListener('click', (e) => {
-    if (e.target.id === "rock" || e.target.id === "paper" || e.target.id === "scissors" ) {
-        play = e.target.id;
-        gameActive = true;
-        console.log(play);
-    } 
-    
-    if (!gameActive) {
-        return;
-    }
-    computerChoice = getComputerChoice();
-    playRound(play, computerChoice);
-    
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        play = button.id;
+        computerChoice = getComputerChoice();
+        playRound(play, computerChoice);
+    });
 });
 
 document.getElementById("playAgain").addEventListener("click", function() {
     document.getElementById("endScreen").style.display = "none";
+    document.getElementById("container").style.display = "flex";
 });
 
 
@@ -80,7 +74,6 @@ function gameFlow() {
 
         // Aparcer na tela quem ganhou ou perdeu
         showEndScreen();
-
         //função reset
         resetGame();
     }
@@ -106,6 +99,7 @@ function showEndScreen() {
         document.getElementById("endTitle").style.color = "#00FF00";
         document.getElementById("endScore").innerHTML = "You: " + humanScore + " X " + "Computer: " + computerScore;
         document.getElementById("endScore").style.color = "#00FF00";
+        document.getElementById("container").style.display = "none";
 
     } else {
         document.getElementById("endScreen").style.display = "flex";
@@ -113,11 +107,11 @@ function showEndScreen() {
         document.getElementById("endTitle").style.color = "#FF0000";
         document.getElementById("endScore").innerHTML = "You: " + humanScore + " X " + "Computer: " + computerScore;
         document.getElementById("endScore").style.color = "#FF0000";
+        document.getElementById("container").style.display = "none";
     }
 }
 
 function resetGame() {
-    gameActive = false;
     humanScore = 0;
     computerScore = 0;
 }
