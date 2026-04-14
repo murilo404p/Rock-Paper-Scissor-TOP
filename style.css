@@ -141,8 +141,8 @@ header p {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 300px;
-    width: 500px;
+    height: 18.5rem;
+    width: 37.5rem;
     border-radius: 10px;
     top: 50%;
     left: 50%;
@@ -185,3 +185,88 @@ header p {
     }
 }
 
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+    header {
+        height: 5rem;
+    }
+
+    header p {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .container {
+        height: auto;
+        padding: 20px;
+    }
+
+    .content {
+        padding: 2rem;
+        width: 100%;
+    }
+
+    /* Pontuação em coluna */
+    .container-points {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .pointsHuman,
+    .pointsComputer {
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
+
+    #X {
+        font-size: 1.5rem;
+    }
+
+    /* Botões menores */
+    .sign .moves {
+        font-size: 2.5rem;
+        padding: 15px;
+        margin: 10px;
+    }
+
+    /* Quebra os botões se precisar */
+    .container-plays {
+        flex-wrap: wrap;
+    }
+
+    #text {
+        font-size: 0.7rem;
+    }
+
+    /* Texto principal */
+    .paragraph {
+        font-size: 0.8rem;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* EndScreen responsiva */
+    .endScreen {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .endTitle {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .endScore {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+    .buttonPlayAgain {
+        padding: 15px;
+        font-size: 0.7rem;
+    }
+}
