@@ -103,7 +103,7 @@ function showEndScreen() {
 
     } else {
         document.getElementById("endScreen").style.display = "flex";
-        document.getElementById("endTitle").innerHTML = "YOU LOSE! TRY AGAIN!";
+        document.getElementById("endTitle").innerHTML = "YOU LOST! TRY AGAIN!";
         document.getElementById("endTitle").style.color = "#FF0000";
         document.getElementById("endScore").innerHTML = "You: " + humanScore + " X " + "Computer: " + computerScore;
         document.getElementById("endScore").style.color = "#FF0000";
