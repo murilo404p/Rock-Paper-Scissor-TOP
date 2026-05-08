@@ -8,7 +8,6 @@
   &nbsp&nbsp|&nbsp&nbsp
   <a href='#-licencas'>Licença</a>
   &nbsp&nbsp|&nbsp&nbsp
-  <a href='https://www.figma.com/community/file/1422676439178901872/caffucinho'>Protótipo</a>
 </p>
 
 <p align=center>
